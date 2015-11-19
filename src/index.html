@@ -1,25 +1,34 @@
 <!DOCTYPE html>
 <html ng-app="realine">
 <head>
+	<base href="/index.html">
 	<title>Realine</title>
 	<!-- CSS Frameworks and Libraries: start -->
 	<link href="bower_components/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
 	<!-- CSS Frameworks and Libraries: end -->
 
 	<!-- CSS App: start -->
+	<link href="app/public/login/login.css" rel="stylesheet">
 	<!-- CSS App: end -->
 
 	<!-- JS Frameworks and Libraries: start -->
 	<script src="bower_components/jquery/dist/jquery.js"></script>
-	<script src="bower_components/angular/angular.js"></script>
 	<script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+	<script src="bower_components/angular/angular.js"></script>
+	<script src="bower_components/angular-route/angular-route.js"></script>
 	<!-- JS Frameworks and Libraries: end -->
 
 	<!-- App: start -->
 	<script src="app/index.js"></script>
+	<!-- Common -->
+	<script src="app/common/module.js"></script>
+	<script src="app/common/auth/user.serv.js"></script>
+	<!-- Public -->
+	<script src="app/public/module.js"></script>
+	<script src="app/public/login/login.ctrl.js"></script>
 	<!-- App: end -->
 </head>
-<body>
+<body ng-controller="MainCtrl as main">
+<div ng-view></div>
 </body>
 </html>
-
