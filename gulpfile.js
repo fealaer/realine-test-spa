@@ -2,14 +2,12 @@
   'use strict';
 
   var gulp = require('gulp')
-    , livereload = require('gulp-livereload')
     , del = require('del')
-    , serve = require('gulp-serve')
+    , connect = require('gulp-connect')
     , Server = require('karma').Server;
 
   gulp.task('watch', ['serve'], function () {
-    livereload.listen();
-    gulp.watch(['src/app/**/*.js', 'src/app/**/*.css', 'src/app/**/*.html'], ['test', 'livereload']);
+    gulp.watch(['src/app/**/*.js', 'src/app/**/*.css', 'src/app/**/*.html'], ['test']);
   });
 
   gulp.task('test', function (done) {
@@ -23,9 +21,12 @@
     return del(['dist']);
   });
 
-  gulp.task('serve', serve('src'));
-
-  gulp.task('livereload', function () {
-    livereload();
+  gulp.task('serve', function() {
+    connect.server({
+      root: 'src',
+      livereload: true,
+      port: 3000,
+      fallback: 'src/index.html'
+    });
   });
 })();
