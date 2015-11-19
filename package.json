@@ -1,0 +1,23 @@
+{
+  "name": "realine-test-spa",
+  "version": "1.0.0",
+  "description": "Test SPA application for Realine",
+  "main": "app.js",
+  "scripts": {
+    "test": "gulp test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/fealaer/realine-test-spa.git"
+  },
+  "keywords": [
+    "angular",
+    "spa"
+  ],
+  "author": "Andrey Pushakrev <fealaer@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fealaer/realine-test-spa/issues"
+  },
+  "homepage": "https://github.com/fealaer/realine-test-spa#readme"
+}
