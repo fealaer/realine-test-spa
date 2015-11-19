@@ -1,0 +1,27 @@
+{
+  "name": "realine-test-spa",
+  "description": "Test SPA application for Realine",
+  "main": "app.js",
+  "authors": [
+    "Andrey Pushakrev <fealaer@gmail.com>"
+  ],
+  "license": "ISC",
+  "keywords": [
+    "angular",
+    "spa"
+  ],
+  "homepage": "https://github.com/fealaer/realine-test-spa",
+  "moduleType": [],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "directory": "app/bower_components/",
+  "dependencies": {
+    "angular": "~1.4.7",
+    "bootstrap": "~3.3.5"
+  }
+}
