@@ -33,7 +33,9 @@
 
     vm.login = login;
     vm.isLoggedIn = isLoggedIn;
+    vm.getLoggedUser = getLoggedUser;
     vm.getUsers = getUsers;
+    vm.signOut = signOut;
 
     function login(data) {
       var deffered = $q.defer();
@@ -64,13 +66,23 @@
 
     function getLoggedUser() {
       if (typeof(Storage) !== "undefined") {
-        return localStorage.loggedUser;
+        if (!localStorage.loggedUser) return;
+        var user = JSON.parse(localStorage.loggedUser);
+        user.bio.fullName = user.bio.firstName + ' ' + user.bio.lastName;
+        return user;
       }
       return loggedUser;
     }
 
     function getUsers() {
       return users;
+    }
+
+    function signOut() {
+      if (typeof(Storage) !== "undefined") {
+        delete localStorage.loggedUser;
+      }
+      loggedUser = undefined;
     }
   }
 

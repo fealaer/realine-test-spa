@@ -2,23 +2,31 @@
   'use strict';
 
   angular
-    .module('realine', ['ngRoute', 'ngMessages', 'realine.public'])
-    .config(['$locationProvider', '$routeProvider',
-      function ($locationProvider, $routeProvider) {
-        $routeProvider
-          .when('/', {
-            controller: 'HomeCtrl'
-          })
-          .otherwise({
-            redirectTo: '/'
-          });
+    .module('realine', [
+        'ui.router'
+      , 'ngMessages'
+      , 'realine.public'
+      , 'realine.dashboard'
+    ])
+    .config(['$locationProvider', '$stateProvider', '$urlRouterProvider',
+      function ($locationProvider, $stateProvider, $urlRouterProvider) {
+        $urlRouterProvider.otherwise('/');
+
+        $stateProvider.state('realine', {
+          url: '/',
+          template: '<ui-view></ui-view>',
+          controller: function(UserServ, $state){
+            if ($state.is('realine')) {
+              $state.go(UserServ.isLoggedIn() ? 'realine.dashboard.home' : 'realine.login');
+            } else if ($state.is('realine.login') && UserServ.isLoggedIn()) {
+              $state.go('realine.dashboard.home');
+            } else if ($state.includes('realine.dashboard.**') && !UserServ.isLoggedIn()) {
+              $state.go('realine.login');
+            }
+          }
+        });
 
         $locationProvider.html5Mode(true);
-      }])
-    .controller('HomeCtrl', ['$location', 'UserServ', HomeCtrl]);
-
-  function HomeCtrl($location, UserServ) {
-    $location.path(UserServ.isLoggedIn() ? '/login' : '/login');
-  }
+      }]);
 
 })();

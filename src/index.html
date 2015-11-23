@@ -15,8 +15,8 @@
 	<script src="bower_components/jquery/dist/jquery.js"></script>
 	<script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
 	<script src="bower_components/angular/angular.js"></script>
-	<script src="bower_components/angular-route/angular-route.js"></script>
 	<script src="bower_components/angular-messages/angular-messages.js"></script>
+	<script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
 	<!-- JS Frameworks and Libraries: end -->
 
 	<!-- App: start -->
@@ -27,9 +27,13 @@
 	<!-- Public -->
 	<script src="app/public/module.js"></script>
 	<script src="app/public/login/login.ctrl.js"></script>
+	<!-- Dashboard -->
+	<script src="app/dashboard/module.js"></script>
+	<script src="app/dashboard/layout/layout.ctrl.js"></script>
+	<script src="app/dashboard/home/home.ctrl.js"></script>
 	<!-- App: end -->
 </head>
-<body ng-controller="HomeCtrl as main">
-<div ng-view></div>
+<body>
+<ui-view></ui-view>
 </body>
 </html>
