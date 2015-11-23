@@ -2,11 +2,12 @@
   'use strict';
 
   angular
-    .module('realine.public', ['ngRoute', 'ngMessages', 'realine.common'])
-    .config(['$routeProvider',
-      function ($routeProvider) {
-        $routeProvider
-          .when('/login', {
+    .module('realine.public', ['ui.router', 'ngMessages', 'realine.common'])
+    .config(['$stateProvider',
+      function ($stateProvider) {
+        $stateProvider
+          .state('realine.login', {
+            url: 'login',
             templateUrl: 'app/public/login/login.html'
           });
       }]);

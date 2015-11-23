@@ -1,7 +1,7 @@
 (function () {
   'use strict';
 
-  function LoginCtrl($timeout, UserServ) {
+  function LoginCtrl($timeout, $state, UserServ) {
     var vm = this;
     vm.data = {};
     vm.formStatus = null;
@@ -16,7 +16,9 @@
         UserServ.login(vm.data).then(function (result) {
           if (result) {
             setFormStatus({loggedIn: true});
-
+            $timeout(function redirect() {
+              $state.reload('realine');
+            }, 3000);
           }
         }, function (err) {
           setFormStatus(err);
@@ -44,6 +46,6 @@
 
   angular
     .module('realine.public')
-    .controller('LoginCtrl', ['$timeout', 'UserServ', LoginCtrl]);
+    .controller('LoginCtrl', ['$timeout', '$state', 'UserServ', LoginCtrl]);
 
 })();
