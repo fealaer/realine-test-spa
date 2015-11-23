@@ -1,0 +1,13 @@
+<div class="row" ng-controller="SuperheroesLayoutCtrl as superLayout">
+	<div class="col-md-2">
+		<div class="panel panel-primary">
+			<div class="panel-heading">Side menu</div>
+			<ul class="list-group">
+				<li class="list-group-item" ng-repeat="item in superLayout.sideMenu">{{item}}</li>
+			</ul>
+		</div>
+	</div>
+	<div class="col-md-10">
+		<ui-view name="content"></ui-view>
+	</div>
+</div>

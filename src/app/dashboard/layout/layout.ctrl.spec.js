@@ -1,7 +1,7 @@
 (function () {
   'use strict';
 
-  describe('Dashboard Home page', function () {
+  describe('Dashboard Layout', function () {
   });
 
 })();
