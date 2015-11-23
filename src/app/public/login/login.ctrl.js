@@ -10,6 +10,7 @@
     vm.setFormError = setFormStatus;
     vm.hasError = hasError;
     vm.getUsers = getUsers;
+    vm.cleanFormStatus = cleanFormStatus;
 
     function login() {
       if (vm.form.$valid) {
