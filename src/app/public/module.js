@@ -2,7 +2,7 @@
   'use strict';
 
   angular
-    .module('realine.public', ['ngRoute', 'realine.common'])
+    .module('realine.public', ['ngRoute', 'ngMessages', 'realine.common'])
     .config(['$routeProvider',
       function ($routeProvider) {
         $routeProvider
