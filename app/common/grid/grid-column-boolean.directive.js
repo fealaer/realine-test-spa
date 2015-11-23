@@ -32,7 +32,7 @@
       bindToController: true,
       transclude: true,
       replace: true,
-      templateUrl: 'app/common/grid/grid-column-boolean.html'
+      templateUrl: '/realine-test-spa/app/common/grid/grid-column-boolean.html'
     };
   }
 

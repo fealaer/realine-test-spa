@@ -9,13 +9,13 @@
           .state('realine.dashboard', {
             abstract: true,
             url: 'dashboard',
-            templateUrl: 'app/dashboard/layout/layout.html'
+            templateUrl: '/realine-test-spa/app/dashboard/layout/layout.html'
           })
           .state('realine.dashboard.home', {
             url: '/',
             views:{
               'content@realine.dashboard': {
-                templateUrl: 'app/dashboard/home/home.html'
+                templateUrl: '/realine-test-spa/app/dashboard/home/home.html'
               }
             }
           });

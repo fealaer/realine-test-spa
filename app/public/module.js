@@ -8,7 +8,7 @@
         $stateProvider
           .state('realine.login', {
             url: 'login',
-            templateUrl: 'app/public/login/login.html'
+            templateUrl: '/realine-test-spa/app/public/login/login.html'
           });
       }]);
 

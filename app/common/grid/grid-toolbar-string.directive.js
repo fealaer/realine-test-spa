@@ -72,7 +72,7 @@
       bindToController: true,
       transclude: true,
       replace: true,
-      templateUrl: 'app/common/grid/grid-toolbar-string.html',
+      templateUrl: '/realine-test-spa/app/common/grid/grid-toolbar-string.html',
       link: function (scope, element, attrs, vm) {
         scope.vm.setOrder = function () {
           vm.orderBy(scope.vm.options.field);

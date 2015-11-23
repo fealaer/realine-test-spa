@@ -11,7 +11,7 @@
             url: '/superheroes',
             views:{
               'content@realine.dashboard': {
-                templateUrl: 'app/dashboard/superheroes/layout/layout.html'
+                templateUrl: '/realine-test-spa/app/dashboard/superheroes/layout/layout.html'
               }
             }
           })
@@ -19,7 +19,7 @@
             url: '/list',
             views:{
               'content@realine.dashboard.superheroes': {
-                templateUrl: 'app/dashboard/superheroes/list/list.html'
+                templateUrl: '/realine-test-spa/app/dashboard/superheroes/list/list.html'
               }
             }
           })
@@ -27,7 +27,7 @@
             url: '/edit/:email',
             views:{
               'content@realine.dashboard.superheroes': {
-                templateUrl: 'app/dashboard/superheroes/form/form.html'
+                templateUrl: '/realine-test-spa/app/dashboard/superheroes/form/form.html'
               }
             }
           });

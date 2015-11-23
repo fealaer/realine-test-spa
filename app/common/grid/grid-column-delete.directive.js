@@ -17,7 +17,7 @@
       bindToController: true,
       transclude: true,
       replace: true,
-      templateUrl: 'app/common/grid/grid-column-delete.html',
+      templateUrl: '/realine-test-spa/app/common/grid/grid-column-delete.html',
       link: function(scope, element, attrs, vm) {
         scope.vm.remove = function() {
           vm.remove(scope.vm.entity);

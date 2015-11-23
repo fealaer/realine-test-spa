@@ -79,7 +79,7 @@
       transclude: true,
       replace: false,
       bindToController: true,
-      templateUrl: 'app/common/grid/grid.html'
+      templateUrl: '/realine-test-spa/app/common/grid/grid.html'
     };
   }
 
