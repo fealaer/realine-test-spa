@@ -3,10 +3,6 @@
 
   function GridColumnEditCtrl($state) {
     var vm = this;
-
-    vm.edit = function() {
-      $state.go('realine.dashboard.superheroes.edit', {email: vm.entity.email});
-    }
   }
 
   function gridColumnEdit() {
