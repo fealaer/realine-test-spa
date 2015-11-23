@@ -6,6 +6,7 @@
     vm.hero;
 
     vm.saveHero = saveHero;
+    vm.hasError = hasError;
 
     init();
 
@@ -16,9 +17,14 @@
     }
 
     function saveHero() {
+      vm.hero.power = Number.parseFloat(vm.hero.power);
       SuperheroServ.saveSuperhero(vm.hero).then(function() {
         $state.go('realine.dashboard.superheroes.list');
       });
+    }
+
+    function hasError(elem) {
+      return elem.$touched && elem.$invalid;
     }
   }
 

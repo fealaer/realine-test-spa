@@ -1,40 +1,64 @@
 <div ng-controller="SuperheroesFormCtrl as superForm">
-	<form name="superhero" class="form-horizontal">
-		<div class="form-group">
+	<form name="superForm.form" class="form-horizontal form-superhero">
+		<div class="form-group" ng-class="{ 'has-error': superForm.hasError(superForm.form.email) }">
 			<label for="email" class="col-sm-2 control-label">Email</label>
 
 			<div class="col-sm-9">
 				<input type="email" class="form-control" id="email" placeholder="Email" name="email"
-				       ng-model="superForm.hero.email" disabled>
+				       ng-model="superForm.hero.email" disabled required="">
+				<div ng-show="superForm.hasError(superForm.form.email)" ng-messages="superForm.form.email.$error">
+					<div ng-messages-include="/realine-test-spa/app/common/partials/messages.html"></div>
+				</div>
 			</div>
 		</div>
-		<div class="form-group">
+		<div class="form-group" ng-class="{ 'has-error': superForm.hasError(superForm.form.username) }">
 			<label for="username" class="col-sm-2 control-label">Username</label>
 
 			<div class="col-sm-9">
 				<input type="text" class="form-control" id="username" placeholder="Username" name="username"
-				       ng-model="superForm.hero.username">
+				       ng-model="superForm.hero.username" required="">
+				<div ng-show="superForm.hasError(superForm.form.username)" ng-messages="superForm.form.username.$error">
+					<div ng-messages-include="/realine-test-spa/app/common/partials/messages.html"></div>
+				</div>
 			</div>
 		</div>
-		<div class="form-group">
+		<div class="form-group" ng-class="{ 'has-error': superForm.hasError(superForm.form.details) }">
 			<label for="details" class="col-sm-2 control-label">Details</label>
 
 			<div class="col-sm-9">
 				<input type="text" class="form-control" id="details" placeholder="Details" name="details"
-				       ng-model="superForm.hero.details">
+				       ng-model="superForm.hero.details" required="">
+				<div ng-show="superForm.hasError(superForm.form.details)" ng-messages="superForm.form.details.$error">
+					<div ng-messages-include="/realine-test-spa/app/common/partials/messages.html"></div>
+				</div>
 			</div>
 		</div>
-		<div class="form-group">
+		<div class="form-group" ng-class="{ 'has-error': superForm.hasError(superForm.form.description) }">
 			<label for="description" class="col-sm-2 control-label">Description</label>
 
 			<div class="col-sm-9">
 				<input type="text" class="form-control" id="description" placeholder="Description" name="description"
 				       ng-model="superForm.hero.description">
+				<div ng-show="superForm.hasError(superForm.form.description)" ng-messages="superForm.form.description.$error">
+					<div ng-messages-include="/realine-test-spa/app/common/partials/messages.html"></div>
+				</div>
+			</div>
+		</div>
+		<div class="form-group" ng-class="{ 'has-error': superForm.hasError(superForm.form.power) }">
+			<label for="power" class="col-sm-2 control-label">Power</label>
+
+			<div class="col-sm-9">
+				<input type="text" class="form-control" id="power" placeholder="Power" name="power"
+				       ng-model="superForm.hero.power" decimal required>
+				<div ng-show="superForm.hasError(superForm.form.power)" ng-messages="superForm.form.power.$error">
+					<div ng-messages-include="/realine-test-spa/app/common/partials/messages.html"></div>
+				</div>
 			</div>
 		</div>
 		<div class="form-group">
 			<div class="col-sm-offset-2 col-sm-9">
-				<button type="submit" class="btn btn-default" ng-click="superForm.saveHero()">Save</button>
+				<button type="submit" class="btn btn-lg btn-success" ng-disabled="superForm.form.$invalid"
+				        ng-click="superForm.saveHero()">Save</button>
 			</div>
 		</div>
 	</form>

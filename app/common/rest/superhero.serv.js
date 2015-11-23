@@ -8,7 +8,8 @@
       details: 'Superhero mutant',
       email: 'spider-man@email.com',
       active: true,
-      locked: false
+      locked: false,
+      power: 2123.14
     },
     {
       username: 'Henry McCoy',
@@ -16,7 +17,8 @@
       details: 'X-Men',
       email: 'beast@xmen.com',
       active: false,
-      locked: true
+      locked: true,
+      power: 59.23
     },
     {
       username: 'James \'Logan\' Howlett',
@@ -24,7 +26,8 @@
       details: 'X-Men',
       email: 'wolverine@xmen.com',
       active: false,
-      locked: true
+      locked: true,
+      power: 648.12
     },
     {
       username: 'Scott Summers',
@@ -32,7 +35,8 @@
       details: 'X-Men',
       email: 'cyclops@xmen.com',
       active: true,
-      locked: false
+      locked: false,
+      power: 2345.67
     },
     {
       username: 'Jean Grey',
@@ -40,7 +44,8 @@
       details: 'X-Men',
       email: 'jean.grey@xmen.com',
       active: false,
-      locked: true
+      locked: true,
+      power: 1345.56
     }
   ];
 
