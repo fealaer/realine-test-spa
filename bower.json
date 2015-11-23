@@ -19,10 +19,10 @@
     "test",
     "tests"
   ],
-  "directory": "src/bower_components/",
   "dependencies": {
-    "angular": "~1.4.7",
-    "bootstrap": "~3.3.5",
-    "angular-route": "~1.4.7"
+    "angular": "1.4.7",
+    "bootstrap": "3.3.5",
+    "angular-route": "1.4.7",
+    "angular-messages": "1.4.7"
   }
 }

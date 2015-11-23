@@ -26,15 +26,16 @@
     }
   ];
 
-  function UserServ ($q) {
+  function UserServ($q) {
     var vm = this;
 
     var loggedUser;
 
     vm.login = login;
-    vm.isLogedIn = isLoggedIn;
+    vm.isLoggedIn = isLoggedIn;
+    vm.getUsers = getUsers;
 
-    function login (data) {
+    function login(data) {
       var deffered = $q.defer();
 
       setTimeout(function () {
@@ -44,28 +45,32 @@
             deffered.resolve(user);
           }
         });
-        deffered.reject('Wrong credentials');
-      }, 1000);
+        deffered.reject({credentials: true});
+      }, 2000);
 
       return deffered.promise;
     }
 
-    function isLoggedIn () {
+    function isLoggedIn() {
       return !!getLoggedUser();
     }
 
-    function saveLoggedUser (user) {
+    function saveLoggedUser(user) {
       if (typeof(Storage) !== "undefined") {
         localStorage.loggedUser = JSON.stringify(user);
       }
       loggedUser = user;
     }
 
-    function getLoggedUser () {
+    function getLoggedUser() {
       if (typeof(Storage) !== "undefined") {
         return localStorage.loggedUser;
       }
       return loggedUser;
+    }
+
+    function getUsers() {
+      return users;
     }
   }
 
