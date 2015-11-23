@@ -18,7 +18,6 @@
     .controller('HomeCtrl', ['$location', 'UserServ', HomeCtrl]);
 
   function HomeCtrl($location, UserServ) {
-    console.log(UserServ.isLoggedIn());
     $location.path(UserServ.isLoggedIn() ? '/login' : '/login');
   }
 
