@@ -7,7 +7,7 @@
 			<input type="email" id="inputEmail" class="form-control" placeholder="Email address"
 			       required="" ng-model="login.data.email" ng-change="cleanFormError()" name="email">
 
-			<div class="help-block" ng-show="login.hasError(login.form.email)" ng-messages="login.form.email.$error">
+			<div ng-show="login.hasError(login.form.email)" ng-messages="login.form.email.$error">
 				<div ng-messages-include="app/common/partials/messages.html"></div>
 			</div>
 		</div>
@@ -16,18 +16,17 @@
 			<input type="password" id="inputPassword" class="form-control" placeholder="Password"
 			       required="" ng-model="login.data.password" ng-change="cleanFormError()" name="password">
 
-			<div class="help-block" ng-show="login.hasError(login.form.password)" ng-messages="login.form.password.$error">
+			<div ng-show="login.hasError(login.form.password)" ng-messages="login.form.password.$error">
 				<div ng-messages-include="app/common/partials/messages.html"></div>
 			</div>
 		</div>
 
-		<div class="help-block" ng-messages="login.formError" ng-class="{ 'has-error': login.formError }">
+		<div ng-messages="login.formStatus">
 			<div ng-messages-include="app/common/partials/messages.html"></div>
 		</div>
 
 		<button class="btn btn-lg btn-primary btn-block" type="submit" ng-disabled="login.form.$invalid"
-		        ng-click="login.login()">Sign in
-		</button>
+		        ng-click="login.login()">Sign in</button>
 	</form>
 	<hr/>
 	<div class="panel panel-info">
