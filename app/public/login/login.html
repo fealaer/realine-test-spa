@@ -8,7 +8,7 @@
 			       required="" ng-model="login.data.email" ng-change="cleanFormError()" name="email">
 
 			<div ng-show="login.hasError(login.form.email)" ng-messages="login.form.email.$error">
-				<div ng-messages-include="/app/common/partials/messages.html"></div>
+				<div ng-messages-include="/realine-test-spa/app/common/partials/messages.html"></div>
 			</div>
 		</div>
 		<div class="form-group" ng-class="{ 'has-error': login.hasError(login.form.password) }">
@@ -17,12 +17,12 @@
 			       required="" ng-model="login.data.password" ng-change="cleanFormError()" name="password">
 
 			<div ng-show="login.hasError(login.form.password)" ng-messages="login.form.password.$error">
-				<div ng-messages-include="/app/common/partials/messages.html"></div>
+				<div ng-messages-include="/realine-test-spa/app/common/partials/messages.html"></div>
 			</div>
 		</div>
 
 		<div ng-messages="login.formStatus">
-			<div ng-messages-include="/app/common/partials/messages.html"></div>
+			<div ng-messages-include="/realine-test-spa/app/common/partials/messages.html"></div>
 		</div>
 
 		<button class="btn btn-lg btn-primary btn-block" type="submit" ng-disabled="login.form.$invalid"
