@@ -33,6 +33,7 @@
 
     vm.login = login;
     vm.isLoggedIn = isLoggedIn;
+    vm.getLoggedUser = getLoggedUser;
     vm.getUsers = getUsers;
 
     function login(data) {
@@ -64,7 +65,7 @@
 
     function getLoggedUser() {
       if (typeof(Storage) !== "undefined") {
-        return localStorage.loggedUser;
+        return JSON.parse(localStorage.loggedUser);
       }
       return loggedUser;
     }
