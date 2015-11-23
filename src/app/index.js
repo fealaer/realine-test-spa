@@ -7,6 +7,7 @@
       , 'ngMessages'
       , 'realine.public'
       , 'realine.dashboard'
+      , 'realine.dashboard.superheroes'
     ])
     .config(['$locationProvider', '$stateProvider', '$urlRouterProvider',
       function ($locationProvider, $stateProvider, $urlRouterProvider) {

@@ -1,0 +1,10 @@
+<td>
+	<div class="input-group">
+		<input type="text" class="form-control" ng-class="vm.inputColorClass()" name="filter" ng-model="vm.filterProxy" ng-disabled="!vm.isFilterable()">
+		<span class="input-group-btn">
+			<button type="button" class="btn" ng-class="vm.buttonColorClass()" name="sort" ng-click="vm.setOrder()" ng-disabled="!vm.isSortable()">
+				<span class="glyphicon" ng-class="vm.buttonIconClass()"></span>
+			</button>
+		</span>
+	</div>
+</td>

@@ -2,6 +2,6 @@
   'use strict';
 
   angular
-    .module('realine.common', []);
+    .module('realine.common', ['realine.common.grid']);
 
 })();

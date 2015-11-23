@@ -1,14 +1,17 @@
 (function () {
   'use strict';
 
-  function DashboardLayoutCtrl($state, UserServ) {
+  function DashboardLayoutCtrl($state, $scope, UserServ) {
     var vm = this;
 
-    var actions;
-    
+    vm.actions;
     vm.user = getLoggedUser();
     vm.signOut = signOut;
-    vm.getActions = getActions;
+
+    $scope.search = '';
+    $scope.setActions = function (actions) {
+      vm.actions = actions;
+    };
 
     function getLoggedUser() {
       return UserServ.getLoggedUser();
@@ -18,14 +21,10 @@
       UserServ.signOut();
       $state.reload('realine');
     }
-
-    function getActions() {
-      return actions;
-    }
   }
 
   angular
     .module('realine.dashboard')
-    .controller('DashboardLayoutCtrl', ['$state', 'UserServ', DashboardLayoutCtrl]);
+    .controller('DashboardLayoutCtrl', ['$state', '$scope', 'UserServ', DashboardLayoutCtrl]);
 
 })();

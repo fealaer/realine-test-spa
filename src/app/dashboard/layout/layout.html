@@ -12,16 +12,17 @@
 				<a class="navbar-brand" href="#">Realine</a>
 			</div>
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-				<!--<ul class="nav navbar-nav navbar-left">-->
-					<!--<li><a ui-sref="realine.dashboard.list">List</a></li>-->
-				<!--</ul>-->
-				<ul class="nav navbar-nav navbar-left" ng-show="layout.getActions()">
+				<ul class="nav navbar-nav navbar-left">
+					<li><a ui-sref="realine.dashboard.superheroes.list">List</a></li>
+				</ul>
+				<ul class="nav navbar-nav navbar-left" ng-show="layout.actions">
 					<li class="dropdown">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
 						   aria-expanded="false">Actions <span class="caret"></span></a>
 						<ul class="dropdown-menu">
-							<li><a href="#">Action</a></li>
-							<li><a href="#">Another action</a></li>
+							<li  ng-repeat="action in layout.actions">
+								<a href="#" ng-click="action.action()">{{action.title}}</a>
+							</li>
 						</ul>
 					</li>
 				</ul>
@@ -31,7 +32,7 @@
 				</ul>
 				<form class="navbar-form navbar-right" role="search">
 					<div class="form-group">
-						<input type="text" class="form-control" placeholder="Search">
+						<input type="text" class="form-control" placeholder="Search" ng-model="search">
 					</div>
 				</form>
 				<p class="navbar-text navbar-right">Signed in as {{layout.user.bio.fullName}}</p>
