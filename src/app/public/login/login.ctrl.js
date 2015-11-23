@@ -1,27 +1,38 @@
 (function () {
   'use strict';
 
-  function LoginCtrl ($timeout, UserServ) {
+  function LoginCtrl($timeout, UserServ) {
     var vm = this;
     vm.data = {};
     vm.formError = null;
 
     vm.login = login;
     vm.cleanFormError = cleanFormError;
+    vm.hasError = hasError;
+    vm.getUsers = getUsers;
 
-    function login () {
+    function login() {
       if (vm.form.$valid) {
         UserServ.login(vm.data).then(function (result) {
           console.log(result);
         }, function (err) {
+          console.log(err);
           vm.formError = err;
-          $timeout(cleanFormError, 2000);
+          $timeout(cleanFormError, 3000);
         });
       }
     }
 
-    function cleanFormError () {
+    function cleanFormError() {
       vm.formError = null;
+    }
+
+    function hasError(elem) {
+      return elem.$touched && elem.$invalid;
+    }
+
+    function getUsers() {
+      return UserServ.getUsers();
     }
   }
 
