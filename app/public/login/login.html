@@ -1,0 +1,39 @@
+<div class="container form-signin" ng-controller="LoginCtrl as login">
+	<form name="login.form" novalidate>
+		<h2 class="form-signin-heading">Please sign in</h2>
+
+		<div class="form-group" ng-class="{ 'has-error': login.hasError(login.form.email) }">
+			<label for="inputEmail" class="sr-only">Email address</label>
+			<input type="email" id="inputEmail" class="form-control" placeholder="Email address"
+			       required="" ng-model="login.data.email" ng-change="cleanFormError()" name="email">
+
+			<div ng-show="login.hasError(login.form.email)" ng-messages="login.form.email.$error">
+				<div ng-messages-include="app/common/partials/messages.html"></div>
+			</div>
+		</div>
+		<div class="form-group" ng-class="{ 'has-error': login.hasError(login.form.password) }">
+			<label for="inputPassword" class="sr-only">Password</label>
+			<input type="password" id="inputPassword" class="form-control" placeholder="Password"
+			       required="" ng-model="login.data.password" ng-change="cleanFormError()" name="password">
+
+			<div ng-show="login.hasError(login.form.password)" ng-messages="login.form.password.$error">
+				<div ng-messages-include="app/common/partials/messages.html"></div>
+			</div>
+		</div>
+
+		<div ng-messages="login.formStatus">
+			<div ng-messages-include="app/common/partials/messages.html"></div>
+		</div>
+
+		<button class="btn btn-lg btn-primary btn-block" type="submit" ng-disabled="login.form.$invalid"
+		        ng-click="login.login()">Sign in</button>
+	</form>
+	<hr/>
+	<div class="panel panel-info">
+		<div class="panel-heading">Valid credentials</div>
+		<div class="panel-body">
+			<p class="text-info" ng-repeat="user in login.getUsers()">{{user.credentials.email + ' : ' +
+				user.credentials.password}}</p>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,5 @@
+<td ng-dblclick="vm.changeMode('edit')" ng-class="{'non-select': vm.isEditable()}">
+	<span ng-show="!vm.isEditMode()">{{vm.value}}</span>
+	<input type="text" ng-model="vm.value" ng-model-options="{updateOn:'blur'}" ng-keypress="vm.onEnter($event)"
+	       ng-show="vm.isEditMode()" ng-blur="vm.changeMode('view')" focus-on="vm.isEditMode()">
+</td>
