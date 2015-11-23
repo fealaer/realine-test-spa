@@ -1,0 +1,12 @@
+<td class="col-boolean">
+	<div class="btn-group" data-toggle="buttons">
+		<label class="btn" ng-class="vm.buttonColorClass(true, 'btn-success')">
+			<input type="radio" ng-click="vm.setFilter(true)" ng-disabled="!vm.isFilterable()">
+			<span class="glyphicon glyphicon-ok-circle"></span>
+		</label>
+		<label class="btn" ng-class="vm.buttonColorClass(false, 'btn-danger')">
+			<input type="radio" ng-click="vm.setFilter(false)" ng-disabled="!vm.isFilterable()">
+			<span class="glyphicon glyphicon-ban-circle"></span>
+		</label>
+	</div>
+</td>

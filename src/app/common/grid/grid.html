@@ -1,0 +1,25 @@
+<!--<div class="pull-left grid-header text-primary">{{vm.options.name}}</div>-->
+<!--<div class="btn-toolbar pull-right">-->
+	<!--<button type="button" class="btn btn-info" ng-show="vm.isSortable()" ng-click="vm.resetOrder()">Reset Order</button>-->
+	<!--<button type="button" class="btn btn-info" ng-show="vm.isFilterable()" ng-click="vm.resetFilter()">Reset Filter</button>-->
+<!--</div>-->
+<table class="table">
+	<thead>
+	<tr>
+		<th ng-repeat="colOptions in vm.options.cols">{{colOptions.field}}</th>
+	</tr>
+	</thead>
+	<tfoot>
+	<tr>
+		<th ng-repeat="colOptions in vm.options.cols">{{colOptions.field}}</th>
+	</tr>
+	</tfoot>
+	<tbody>
+	<!--<tr>-->
+		<!--<td ng-repeat="colOptions in vm.options.cols" grid-toolbar options="colOptions" filter="vm.options.filter" order="vm.options.order"></td>-->
+	<!--</tr>-->
+	<tr ng-repeat="entity in vm.data | filter:vm.options.filter | orderBy:vm.options.order.predicate:vm.options.order.reverse">
+		<td ng-repeat="colOptions in vm.options.cols" grid-column entity="entity" options="colOptions"></td>
+	</tr>
+	</tbody>
+</table>
